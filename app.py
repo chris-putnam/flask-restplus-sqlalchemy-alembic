@@ -1,6 +1,6 @@
 from flask import Blueprint, Flask, request
 
-from database import db, user
+from database import db
 
 from api import endpoint
 

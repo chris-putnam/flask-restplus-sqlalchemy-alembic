@@ -1,12 +1,11 @@
-from sqlalchemy.ext.declarative import declarative_base
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-Base = db
-metadata = Base.metadata
+metadata = db.metadata
+declarative_base = db.make_declarative_base(db.Model, metadata=db.metadata)
 
 
-class Base(db.Model):
+class Base(declarative_base):
     __abstract__ = True
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
