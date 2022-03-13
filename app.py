@@ -30,15 +30,15 @@ def initialize_app(flask_app):
 
     with app.app_context():
         db.init_app(app)
-        db.create_all()
+        # db.create_all()
 
-        try:
-            user1 = user.User(username='chris',
-                              email='chris.putnam@swedenstreet.com')
-            db.session.add(user1)
-            db.session.commit()
-        except Exception as e:
-            print(e)
+        # try:
+        #     user1 = user.User(username='chris',
+        #                       email='chris.putnam@swedenstreet.com')
+        #     db.session.add(user1)
+        #     db.session.commit()
+        # except Exception as e:
+        #     print(e)
 
 
 def main():
