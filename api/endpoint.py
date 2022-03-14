@@ -1,4 +1,5 @@
 from flask_restplus import Resource
+from sqlalchemy.orm import joinedload
 from api.api import api, ns
 from database.model import *
 from serializers import user_details, role_details
@@ -14,7 +15,8 @@ class DefaultCollection(Resource):
 class UserCollection(Resource):
     @api.marshal_with(user_details)
     def get(self):
-        users = User.query.all()
+        users = User.query.options(joinedload(
+            User.role, innerjoin=True)).all()
         return users
 
 

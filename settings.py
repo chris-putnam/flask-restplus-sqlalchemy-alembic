@@ -1,7 +1,7 @@
 APP_NAME = 'test-api'
 FLASK_PORT = 5000
 FLASK_DEBUG = True
-SQLALCHEMY_DATABASE_URI = 'sqlite+pysqlite:///database.db'
+SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://app_user:Password123!@127.0.0.1:3306/test-api'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 SWAGGER_UI_DOC_EXPANSION = True
 RESTPLUS_VALIDATE = True
